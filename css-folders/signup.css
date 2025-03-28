@@ -1,0 +1,278 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url("../Images/signup-background.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+#nav-checkbox, .nav-toggle{
+  display: none;
+}
+
+/* NAV BAR */
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex ;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0;
+  background: rgba(0, 0, 0, 0.6) ;
+  transition: background-color 1s ease;
+}
+
+header:after{
+  content: '';
+  position: absolute;
+  background-color: rgb(88, 61, 86);
+  height: 2px;
+  width: 100%;
+  left: 0;
+  bottom: 0%;
+}
+
+.logo img{
+  width: 50px;
+}
+
+.nav-menu li{
+  display: inline-block;
+}
+
+.nav-menu li a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 17px;
+  padding: 0 10px;
+}
+
+.nav-menu li a:hover{
+  color: rgb(211, 111, 170);
+}
+
+.active{
+  background: rgb(88, 61, 86);
+}
+
+.active a:hover{
+  color: rgb(211, 111, 170) !important;
+}
+
+.nav-menu .sign-in{
+  background: rgba(255, 255, 255, 0.9);
+  color: rgb(88, 61, 86);
+  border: 2px solid rgb(88, 61, 86);
+  border-radius: 55px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.nav-menu .search_box{
+  height: 40px;
+  display: flex;
+  cursor: pointer;
+  padding: 10px 20px;
+  color: rgb(88, 61, 86);
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgb(88, 61, 86);
+  border-radius: 55px;
+  align-items: center;
+}
+
+
+.nav-menu .search_box input{
+  width: 180px;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  transition: 0.8s;
+  background: transparent;
+  
+}
+
+.nav-menu .search_box a{
+  color:rgb(183, 107, 178);
+  font-size: 17px;
+}
+
+@media only screen and (max-width: 900px){
+  header{
+    display: block;
+  }
+
+  .logo{
+    margin-left: 40px;
+  }
+
+  .nav-toggle{
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    margin: 0 1rem;
+    top: 30px;
+    right: 0;
+  }
+
+  .nav-toggle img{
+    width: 30px;
+  }
+
+  #nav-checkbox:Checked ~ .nav-menu{
+    margin-top: 10px;
+    padding: 10px 0;
+    border-top: 1px solid #fff;
+  }
+
+  .nav-menu li{
+    display: none;
+    margin: 25px 5%
+  }
+
+  #nav-checkbox:Checked ~ ul.nav-menu li{
+    display: block;
+  }
+
+  #nav-checkboc:Checked ~ label.nav-toggle .open{
+    display: none;
+  }
+
+  .hero h1{
+    font-size: 46px;
+  }
+
+  .shopping-cart,
+  .book-mark,
+  .notification{
+    visibility: hidden;
+  }
+
+  .search_box{
+    width: 240px;
+  }
+}
+/* END NAV BAR */
+
+.wrapper {
+  background: rgb(255, 255, 255, 0.8);
+  width: 450px;
+  border-radius: 16px;
+  box-shadow: 0 0 10px 3px rgb(212, 218, 232);
+}
+
+.form{
+  padding: 25px 30px;
+}
+
+.form.signup,
+.form.login{
+  padding-top: 30px;
+}
+
+.form.signup .headername,
+.form.login .headername{
+  font-size: 25px;
+  text-align: center;
+  font-weight: 600;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e6e6e6;
+  margin: 0 auto;
+}
+
+.form form{
+  margin: 20px 0;
+}
+
+.form form .error-txt{
+  color: #721c24;
+  background: #f8d7da;
+  padding: 8px 10px;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #f5c6cb;
+  display: none;
+}
+
+.form form .field{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form form .field label{
+  margin-bottom: 2px;
+  font-weight: 200;
+  color: #333;
+}
+
+.form form .field input{
+  outline: none;
+}
+
+.form form .inp input{
+  height: 40px;
+  width: 100%;
+  font-size: 16px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form form .submit input{
+  margin-top: 13px;
+  height: 45px;
+  border: none;
+  font-size: 17px;
+  font-weight: 400;
+  background: #333;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form form .field i{
+  position: absolute;
+  right: 15px;
+  color: #333;
+  top: 70%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.form form .field i.active::before{
+  color: #333;
+  content: "\f070";
+}
+
+.form .link{
+  text-align: center;
+  margin: 10px 0;
+  font-size: 17px;
+}
+
+.form .link a{
+  color: #333;
+}
+
+.form .link a:hover{
+  text-decoration: underline;
+}
+
